@@ -1,15 +1,31 @@
 <template>
   <div class="hello">
+    <img alt="Vue logo" src="../assets/logo.png">
     <h1>{{ msg }}</h1>
     <h3>Hi, it's me, micro root</h3>
+    <button @click="goToApp1">click</button>
+
+    <div id="microAppContainer"></div>
   </div>
 </template>
 
 <script>
+import { start } from 'qiankun'
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  mounted(){
+    if (!window.qiankunStarted) {
+      window.qiankunStarted = true;
+      start();
+    }
+  },
+  methods: {
+    goToApp1(){
+      this.$router.push('/home/app1')
+    }
   }
 }
 </script>

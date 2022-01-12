@@ -1,22 +1,44 @@
 import Vue from 'vue'
+import VueRouter from 'vue-router'
 import App from './App.vue'
 
 Vue.config.productionTip = false
 
+Vue.use(VueRouter)
 
-import { registerMicroApps, start } from 'qiankun';
+
+const routes = [
+  { 
+    path: '/', 
+    redirect: '/home'
+  }, {
+    path: '/home', 
+    component: () => import('./components/HelloWorld.vue')
+  }, {
+    path: '/home/*', 
+    component: () => import('./components/HelloWorld.vue')
+  }
+]
+
+const router = new VueRouter({
+  base: '/',
+  mode: 'history',
+  routes
+});
+
+
+import { registerMicroApps } from 'qiankun'
 
 registerMicroApps([
   {
     name: 'micro-app1',
     entry: '//localhost:3001',
     container: '#microAppContainer',
-    activeRule: '/app1',
+    activeRule: '/home/app1',
   },
 ]);
 
-start();
-
 new Vue({
+  router,
   render: h => h(App),
 }).$mount('#app')
