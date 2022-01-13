@@ -2,25 +2,17 @@
   <div class="hello">
     <img alt="Vue logo" src="../assets/logo.png">
     <h1>{{ msg }}</h1>
-    <h3>Hi, it's me, micro root</h3>
+    <h3>Hi, it's me, micro root hello</h3>
     <button @click="goToApp1">click</button>
-
-    <div id="microAppContainer"></div>
   </div>
 </template>
 
 <script>
-import { start } from 'qiankun'
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
-  },
-  mounted(){
-    if (!window.qiankunStarted) {
-      window.qiankunStarted = true;
-      start();
-    }
   },
   methods: {
     goToApp1(){
@@ -32,9 +24,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
 ul {
   list-style-type: none;
   padding: 0;

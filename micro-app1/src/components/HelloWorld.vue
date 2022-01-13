@@ -1,7 +1,6 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h3>Hi, it's me, micro app1</h3>
   </div>
 </template>
 

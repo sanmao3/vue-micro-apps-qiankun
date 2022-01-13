@@ -1,3 +1,4 @@
+import './public-path'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
@@ -5,14 +6,22 @@ import App from './App.vue'
 Vue.config.productionTip = false
 
 
+Vue.use(VueRouter)
+
 let router = null;
 let instance = null;
 function render(props = {}) {
   const { container } = props;
   router = new VueRouter({
-    base: window.__POWERED_BY_QIANKUN__ ? '/app1/' : '/',
+    base: window.__POWERED_BY_QIANKUN__ ? '/home/app1/' : '/',
     mode: 'history',
-    routes: []
+    routes: [{ 
+      path: '/',
+      redirect: '/home'
+    }, {
+      path: '/home',
+      component: () => import('./pages/Home.vue')
+    }]
   });
 
   instance = new Vue({
