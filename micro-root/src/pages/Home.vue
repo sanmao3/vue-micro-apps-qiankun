@@ -59,4 +59,4 @@ export default {
   border: 1px solid #eee;
   padding: 15px;
 }
-</style>>
+</style>
