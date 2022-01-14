@@ -2,8 +2,8 @@
   <div class="hello">
     <img alt="Vue logo" src="../assets/logo.png">
     <h1>{{ msg }}</h1>
-    <h3>Hi, it's me, micro root hello</h3>
-    <button @click="goToApp1">click</button>
+    <h3>Hi, it's me, micro root hello page</h3>
+    <button @click="goToApp1">open app1</button>
   </div>
 </template>
 

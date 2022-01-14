@@ -7,13 +7,6 @@ Vue.config.productionTip = false
 
 Vue.use(VueRouter)
 
-const router = new VueRouter({
-  base: '/',
-  mode: 'history',
-  routes
-});
-
-
 import { registerMicroApps } from 'qiankun'
 
 registerMicroApps([
@@ -24,6 +17,12 @@ registerMicroApps([
     activeRule: '/home/app1',
   },
 ]);
+
+const router = new VueRouter({
+  base: '/',
+  mode: 'history',
+  routes
+});
 
 new Vue({
   router,

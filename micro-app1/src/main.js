@@ -5,11 +5,11 @@ import App from './App.vue'
 
 Vue.config.productionTip = false
 
-
 Vue.use(VueRouter)
 
 let router = null;
 let instance = null;
+
 function render(props = {}) {
   const { container } = props;
   router = new VueRouter({
